@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>json_object_nested</title>
+</head>
+<body>
+<p> view json_object_nested</p>
+<p id="demo"></p>
+<script>
+    myObj ={
+        "name":"json_object_nested",
+        "alexa":8000,
+        "site":{
+            "site1":"www.w3sshool.cn",
+            "site2":"m.w3school.cn",
+            "site3":"www.w3school.cn/json"
+        }
+    }
+    document.getElementById("demo").innerHTML += myObj.site.site1 +"<br>";
+    document.getElementById("demo").innerHTML += myObj.site["site2"];
+</script>
+</body>
+</html>
