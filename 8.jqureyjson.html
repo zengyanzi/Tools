@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.4.1.min.js"></script>
+</head>
+<body>
+<script>
+    var UserList = [
+        { "UserID": 11, "Name": { "FirstName": "Truly", "LastName": "Zhu" }, "Email": "" },
+        { "UserID": 12, "Name": { "FirstName": "Jeffrey", "LastName": "Richter" }, "Email": "" },
+        { "UserID": 13, "Name": { "FirstName": "Scott", "LastName": "Gu" }, "Email": "" }
+    ]
+    $.each(UserList,function (k,v) {
+        $.each(v,function (k1,v1) {
+            if (typeof (v1)=='object'){
+                $.each(v1,function (k2,v2) {
+                    window.alert("key="+k2+" value" +v2)
+                });
+            } else {
+                window.alert("key="+k1+" value="+v1);
+            }
+        })
+
+    })
+</script>
+</body>
+</html>
