@@ -6,15 +6,21 @@
 </head>
 <script>
     var UserList = [
-        {"UserID":11, "Name":"Truly","Email":"zhuleipro◎hotmail.com"},
-        {"UserID":12, "Name":"Jeffrey", "Email":"xxx◎xxx.com"},
-        {"UserID":13, "Name":"Scott", "Email":"xxx2◎xxx2.com"}
-    ];
-    for (var i=0,l= UserList.length;i<l;i++){
-        for (var key in UserList[i]){
-            alert(key +':'+UserList[i][key]);
-        }
-    }
+        { "UserID": 11, "Name": { "FirstName": "Truly", "LastName": "Zhu" }, "Email": "" },
+        { "UserID": 12, "Name": { "FirstName": "Jeffrey", "LastName": "Richter" }, "Email": "" },
+        { "UserID": 13, "Name": { "FirstName": "Scott", "LastName": "Gu" }, "Email": "" }
+    ]
+   for (var i in UserList){
+       for (var k in UserList[i]){
+           if (typeof UserList[i][k] == "object"&& UserList[i][k] !=null) {
+               for (var j in UserList[i][k]){
+                   alert("key=" +j+"--value"+UserList[i][k][j])
+               }
+           }else {
+               alert("key="+k+"--value"+UserList[i][k]);
+           }
+       }
+    } 
 </script>
 <body>
 
