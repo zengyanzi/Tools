@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forin</title>
+</head>
+<script>
+    var UserList = [
+        {"UserID":11, "Name":"Truly","Email":"zhuleipro◎hotmail.com"},
+        {"UserID":12, "Name":"Jeffrey", "Email":"xxx◎xxx.com"},
+        {"UserID":13, "Name":"Scott", "Email":"xxx2◎xxx2.com"}
+    ];
+    for (var i=0,l= UserList.length;i<l;i++){
+        for (var key in UserList[i]){
+            alert(key +':'+UserList[i][key]);
+        }
+    }
+</script>
+<body>
+
+</body>
+</html>
+
