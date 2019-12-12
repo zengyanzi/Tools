@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Create Object from JSON String</h2>
+<p>First Name: <span id="fname"></span></p>
+
+<script>
+var employees = [
+    { "firstName" : "John" , "lastName" : "Doe" },
+    { "firstName" : "Anna" , "lastName" : "Smith" },
+    { "firstName" : "Peter" , "lastName" : "Jones" }, ];
+employees[1].firstName="Jonatan";
+document.getElementById("fname").innerHTML=employees[1].firstName;
+</script>
+
+</body>
+</html>
