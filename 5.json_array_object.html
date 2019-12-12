@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>json_array_object</title>
+    <script language="JavaScript">
+        document.writeln("<h2>JSON array object</h2>");
+        var books ={
+            "Pascal" :[
+                {"Name":"Pasal Made Simple","price":900},
+                {"Name":"Guide to Pascal","price":500}
+            ],
+            "Scala":[
+                {"Name":"Scala for the Impatient","price":1000},
+                {"Name":"Scala in Depth","price":1300}
+            ]
+        }
+        var i = 0;
+        document.writeln("<table border='2'><tr>");
+        for (i =0;i<books.Pascal.length;i++)
+            {
+                document.writeln("<td>");
+                document.writeln("<table border='1' width=100 >");
+                document.writeln("<tr><td><b>Name</b></td><td width='50'>"+books.Pascal[i].name+"</td></tr>");
+                document.writeln("<tr><td><b>Price</b></td><td width=50>"+books.Pascal[i].price+".</td></tr>");
+                document.writeln("</table>");
+                document.writeln("</td>");
+            }
+        for (i=0;i<books.Scala.length;i++)
+        {
+            document.writeln("<td>");
+            document.writeln("<table border='1' width=100 >");
+            document.writeln("<tr><td><b>Name</b></td><td width=50>"
+                + books.Scala[i].Name+"</td></tr>");
+            document.writeln("<tr><td><b>Price</b></td><td width=50>"
+                + books.Scala[i].price+"</td></tr>");
+            document.writeln("</table>");
+            document.writeln("</td>");
+        }
+            document.writeln("</tr></table>");
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+
+</script>
