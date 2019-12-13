@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filter</title>
+    <script language="JavaScript">
+        var aim = [
+            {name:'Anne', age: 23, gender:'female'},
+            {name:'Leila', age: 16, gender:'female'},
+            {name:'Jay', age: 19, gender:'male'},
+            {name:'Mark', age: 40, gender:'male'}
+        ]
+
+        // 根据单个名字筛选
+        function filterByName(aim,name) {
+                return aim.filter(item=>item.name == name)
+        }
+        console.log(filterByName(aim,'Jay'));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
