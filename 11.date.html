@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date</title>
+    <script language="JavaScript">
+        var d = new Date()
+        document.write(d.getDate());
+        var birthday = new Date("October 30,2018 01:12:00")
+        document.write(birthday.getDate());
+        var date =new Date(1398250549490);
+        Y = date.getFullYear()+'-';
+        M = (date.getMonth()+1<10 ? '0'+(date.getMonth()+1):date.getMonth()+1)+'-';
+        D = date.getDate()+' ';
+        h = date.getHours()+':';
+        m = date.getMinutes()+':';
+        s = date.getSeconds();
+        console.log(Y+M+D+h+m+s);
+
+    </script>
+</head>
+<body>
+
+</body>
+
