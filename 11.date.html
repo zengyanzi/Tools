@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <title>Date</title>
     <script language="JavaScript">
-        var d = new Date()
-        document.write(d.getDate());
+        var d = new Date()//be default gieve the browser's time zone and display the date aa a full text string
+        document.write(d.getDate());//return the day of the month
         var birthday = new Date("October 30,2018 01:12:00")
-        document.write(birthday.getDate());
+        //document.write(birthday.getDate());
         var date =new Date(1398250549490);
         Y = date.getFullYear()+'-';
         M = (date.getMonth()+1<10 ? '0'+(date.getMonth()+1):date.getMonth()+1)+'-';
@@ -16,10 +16,15 @@
         m = date.getMinutes()+':';
         s = date.getSeconds();
         console.log(Y+M+D+h+m+s);
-
+        var date1 = new Date(2019,0,1);
+        var date2 = new Date(2019,1,1);
+        console.log(date1 >date2);//false
+        console.log(date1< date2);//true
+        Date.now=function () {
+            return(new Date().getTime())
+        }
     </script>
 </head>
 <body>
 
 </body>
-
