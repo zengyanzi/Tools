@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>regex</title>
+</head>
+<body>
+<input type="text">
+<script>
+
+    var pattern = /\W*/g;//字母、数字或者下划线
+    var $input =document.querySelectorAll("input")[0];
+    $input.addEventListener('keyup',function () {
+        var val =$input.value;
+        $input.value=val.replace(pattern,'');
+    },false);
+</script>
+</body>
+</html>
