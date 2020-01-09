@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>clearboth</title>
+    <style type="text/css">
+        .clearfix:after{
+            content:"\200B";
+            display: block;
+            height: 0;
+            clear:both;
+        }
+        .clearfix{
+            *zoom:1;
+        }
+    </style>
+</head>
+<body>
+// display:block 使生成的元素以块级元素显示，占满剩余空间
+//height:0 避免生成的内容破坏原有布局的高度
+//conttnt:"\200B" Unicode字符里有一个零宽度空格,U+200B,字符本身不可见
+//zoom:1 厨房IE haslayout
+<!--<div>-->
+    <!--<span style="float:left">br label clear both</span>-->
+    <!--<br/>-->
+<!--</div>-->
+<!--<div style="overflow:auto;">-->
+    <!--<span style="float:left">overflow clear float</span>-->
+<!--</div>-->
+<!--<div style="overflow: hidden">-->
+    <!--<span style="float:left">overflow clear float</span>-->
+<!--</div>-->
+
+<!--<div style="float:left">-->
+    <!--<span style="float: left">float left clear float</span>-->
+<!--</div>-->
+
+
+<!--<div style="display: table">-->
+    <!--<span>clear float table</span>-->
+<!--</div>-->
+<div class="clearfix">
+    <span style="float:left">clearfix clear float</span>
+</div>
+</body>
+</html>
