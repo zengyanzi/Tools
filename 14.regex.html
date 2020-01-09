@@ -14,6 +14,55 @@
         var val =$input.value;
         $input.value=val.replace(pattern,'');
     },false);
+    var str = "abc+ef"
+    var pattern1 = /\+/;//转义字符\,因为正则表达式的+是保留字
+    // 将+替换成d
+    var str = str.replace(pattern1, "d");
+    console.log(str);  // 输出abcdef
+
+    // Exp01  ^...特殊字符^
+    var str1 = "abc";
+    var str2 = "#abc";
+    var pattern2 = /^a/;  //匹配以a开头的 **单字符**
+    console.log(str1.replace(pattern2,"A")); // 输出Abc
+    console.log(str2.replace(pattern2, "A"));  // 输出#abc
+
+    // Exp02 [^...]^ 的作用不但只是用来匹配开始，还可以配合 []起到 取反 的作用
+    var str3 = "abc";
+    var pattern3 = /[^a]/;   //匹配第一个非a字符，这里没有使用全局搜索[匹配所有字符]，所以匹配到第一个相匹配的字符后就不再继续匹配
+    console.log(str3.replace(pattern3, 'E'));
+
+    // EXp03 |$|匹配输入的结束
+    var str4 = "abcddd";
+    var pattern4 = /d$/;
+    console.log(str4.replace(pattern4, "D"));  // 输出abcddD
+
+    // Exp04
+    var str5 = "abbbbc", str6 = "abcd";
+    var pattern5 = /^a[a-zA-Z]*c$/;  // 匹配以a开头，C结尾的只含字母的字符串。不知道 * 含义的请看这面一个特殊字符的说明
+    console.log(str5.replace(pattern5, "AD"));  // 输出AD
+    console.log(str6.replace(pattern5, "AD"));  // 原样输出abcd
+    //*前一个表达式0次或多次
+    var str7 = "abbbbbbbc",   //b出现多次
+        str8 = "ac";  // b没有出现
+    var pattern6 = /^ab*/;  // 匹配以a开头紧接0个或多个b的字串
+    console.log(str7.replace(pattern6, "AB"));  // 输出ABc
+    console.log(str8.replace(pattern6, "AB"));  // 输出ABc
+    //+匹配前面一个表达式1次或者多次
+    var str9 = "abbbbbbbc",   //b出现多次
+        str10 = "ac";  // b没有出现
+    var pattern7 = /^ab+/;  // 匹配以a开头紧接至少出现一个b的字串
+    console.log(str9.replace(pattern7, "AB"));  // 输出ABc
+    console.log(str10.replace(pattern7, "AB"));  // 输出ac
+    //?匹配前面一个表达式0次或者1次
+    var str11 = "ac",   //b没有多次
+        str12 = "abc";  // b出现1次
+    str13 = "abbc";  // b出现2次
+    var pattern8= /^ab?c$/;  // 匹配以a开头紧接仅仅出现0次或1次b，并且以c结尾的字串
+    console.log(str11.replace(pattern8, "ABC"));  // 输出ABC
+    console.log(str12.replace(pattern8, "ABC"));  // 输出ABC
+    console.log(str13.replace(pattern8, "ABC"));  // 输出abbc
+
 </script>
 </body>
 </html>
