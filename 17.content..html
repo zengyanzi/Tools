@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Content</title>
+    <style type="text/css">
+        body {
+            content-reset:chaper;
+        }
+        h1:before{
+            content:"The"counter(chapter)"chapter"
+        }
+        h1{
+            counter-increment: chapter;
+        }
+    </style>
+</head>
+<body>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+</body>
+</html>
