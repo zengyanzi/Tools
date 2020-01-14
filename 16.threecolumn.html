@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Three column</title>
+    <style type="text/css">
+        .container div{
+            height: 200px;
+        }
+        .container {
+            padding: 0 200px;
+        }
+        .main,
+        .left,
+        .right {
+            position: relative;
+            float: left;
+        }
+        .left,
+        .right {
+            width: 200px;
+        }
+        .main {
+            width: 100%;
+            background-color: yellow;
+        }
+        .left{
+            background: blue;
+            margin-left: -100%;
+            left: -200px;
+        }
+        .right{
+            background: green;
+            margin-left: -200px;
+            left: 200px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="main">
+        <h2>CSS revivew</h2>
+    </div>
+    <div class="left">LEFT</div>
+    <div class="right">RIGHT</div>
+</div>
+
+</body>
+</html>
