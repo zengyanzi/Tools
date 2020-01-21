@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IE</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            float: left;
+            width: 10px;
+            margin: 0 0 0 100px;
+            _display:inline;
+        }
+        .bb{
+            background-color: #f1a899;/*所有识别*/
+            .background-color:#00deff\9;/*IE 6 7 8识别*/
+            +background-color:#a200ff; /*IE 6 7 识别*/
+            _background-color:#777620;/*IE 6 识别*/
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+     <div class="bb"></div>
+
+</body>
+</html>
