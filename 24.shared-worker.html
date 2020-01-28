@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>shared-workder</title>
+    <script src="shared-worker.js"></script>
+</head>
+<body>
+    Output
+<div id="output"></div>
+    <iframe src="inner.html" frameborder="0" width="500px" height="600px"></iframe>
+    <script>
+        (function () {
+            var connectId;
+            if (typeof (SharedWorker) !== "undefined"){
+                var worker = new SharedWorker('shared-worker.js');
+                worker.port.addEventListener('message',messageHandler);
+                worker.port.start();
+                var waitingConnectIdReadyFnId = setInterval(function () {
+                    if (connectId !==undefined) {
+                        work.port.postMessage({
+                            id:connectId,
+                            message:'main page'
+                        });
+                        clearInterval(waitingConnectIdReadyFnId);
+
+                        setInterval(function () {
+                            worker.port.postMessage({
+                                id: connectId,
+                            message:'main page ping'
+                      ``  });
+                        },3000 );
+                    }
+                },100 );
+        }else{
+        alert('Your browser does not support sharedworker');
+        }
+            function messageHandler(evt) {
+        if (typeof evt.data === 'number' ){
+            connectId=evt.data;
+        } else{
+            var html = document.getElementById('output').innerHTML;
+            document.getElementById('output').innerHTML=html+''+evt.data;
+        }
+
+        }
+        })();
+    </script>
+</body>
+</html>

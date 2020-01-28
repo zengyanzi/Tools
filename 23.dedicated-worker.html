@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dedicted worker demo</title>
+</head>
+<body>
+    <p>Please open console (F12) to check the result</p>
+    <script>
+        (function () {
+            if (typeof (Worker)!=="undefined"){
+                var worker = new Worker('dedicated-work.js');
+                var times =0;
+                //worker.onmessage = messageHandler;
+                worker.addEventListener('message',messageHandler)
+                worker.postMessage('start!');
+            } else {
+                alert('Your browser does nott support web-worker');
+            }
+            function messageHander(evt) {
+                times++;
+                if (time <= 10){
+                    console.log('%s，receive msg: %s',times,evt.data);
+                }else {
+                    worker.terminate();
+                }
+
+            }
+        })
+    </script>
+
+</body>
+</html>
