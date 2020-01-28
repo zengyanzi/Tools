@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5cdb507-f978-4c50-b890-89545a03e252" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/25.Rectangle.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/26.Cache Manifest.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -25,7 +25,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/25.Rectangle.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
@@ -33,6 +33,15 @@
               <folding>
                 <element signature="n#style#0;n#rect#0;n#svg#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/26.Cache Manifest.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -83,6 +92,7 @@
         <option value="$PROJECT_DIR$/shared-worker.js" />
         <option value="$PROJECT_DIR$/24.shared-worker.html" />
         <option value="$PROJECT_DIR$/25.Rectangle.html" />
+        <option value="$PROJECT_DIR$/26.Cache Manifest.html" />
       </list>
     </option>
   </component>
@@ -149,12 +159,12 @@
       <workItem from="1578277780963" duration="15642000" />
       <workItem from="1578950956290" duration="10465000" />
       <workItem from="1579483759465" duration="18484000" />
-      <workItem from="1580171464310" duration="1770000" />
+      <workItem from="1580171464310" duration="2368000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78586000" />
+    <option name="totallyTimeSpent" value="79184000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -420,6 +430,13 @@
           <folding>
             <element signature="n#style#0;n#rect#0;n#svg#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/26.Cache Manifest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
         </state>
       </provider>
     </entry>
