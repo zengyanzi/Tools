@@ -5,18 +5,20 @@
     <title>Transition</title>
     <script src="jquery-3.4.1.min.js"></script>
     <style>
-
+        .demo { background-color: #0094ff; width: 100px; height: 100px; position: absolute; }
     </style>
 </head>
 <body>
 
-<div id="test" style="border:1px solid red;position:relative;width:100px;height:100px;">
-</div>
-    <script type="text/javascript">
-        $(function(){
-            $('#test').animate({left:'+100px'},2000);
-             });
-
-    </script>
+<div class="demo" id="demo"></div>
+<script>
+    var elem = document.getElementById('demo'),
+        elemStyleSheet = elem.style;//元素的内联样式对象
+    //赋上transition
+    elemStyleSheet.cssText = 'left:0; transition: all linear 1s;';
+    elem.onclick = function () {
+        elemStyleSheet.left = '100px';
+    }
+</script>
 </body>
 </html>
