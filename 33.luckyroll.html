@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lucky roll</title>
+</head>
+<body>
+<button onclick="onClear()"> Clear</button>
+<br/>
+<textarea name="staffids" id="staffids" cols="30" rows="10" placeholder="please input employeeid"></textarea>
+<br/>
+<textarea name="numroll" id="numroll" cols="30" rows="10" placeholder="please input number to win,be less than the NO of employees"></textarea>
+<br/>
+<button onclick="onRoll()">Roll</button>
+<br/>
+<input type="text" id="rollresult" placeholder="winnerlist"/>
+
+<script>
+    var pool =[];
+    var exWinners = new Set([]);
+    function onClear() {
+        document.getElementById("employeeid").value='';
+        document.getElementById("rollresult").value='';
+        document.getElementById("numroll").value = '';
+        exWinners.clear();
+        alert("All the staffids have been cleared");
+    }
+    function onRoll() {
+        staffids=document.getElementById("staffids").value.split(",");
+        console.log(staffids);
+        const count= parseInt(document.getElementById("numroll").value);
+        console.log(count);
+        pool =different(staffids,exWinners)
+        console.log("pool"+pool);
+        if (pool.length ==0){
+            alert("all the employees have been selected")
+        }
+        shuffle(pool);
+        var winner = pool.slice(0,count);
+        for (var i=0;i<winner.length;i++){
+            exWinners.add(winner[i]);
+        }
+        document.getElementById("rollresult").value= winner.join(",");
+
+    }
+    function different(staffids,exWinners) {
+        var res=[];
+        res = staffids.filter(x=>!exWinners.has(x));
+        return res;
+    }
+    function shuffle(arr){
+        arr.sort(()=>{
+            return  Math.random() > 0.5 ? -1 : 1;
+            //返回值大于0，表示需要交换；小于等于0表示不需要交换
+        })
+    }
+
+</script>
+</body>
+</html>
