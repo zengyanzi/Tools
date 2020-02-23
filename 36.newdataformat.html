@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" charset="utf-8"?>
+		<title>Dataformat</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+	</head>
+	<body>
+		<input type="text" id="origin"  placeholder="please input the number"  />
+		<br/>
+		<!-- <input type="text" id="count" pleaceholder="please input the number of decimals" /> -->
+		<br/>
+		<button type="button" onClick="myChange()">Click</button>
+		<br/>
+		<input type="text" id="output"/>
+		<script>
+			function myChange(){
+				var number= document.getElementById("origin").value;
+				console.log("origindata"+number);
+				//const count =parseInt(document.getElementById("count").value);
+				//console.log("count"+count);
+				//const outputdata = numeral(origindata).format('0,0.00')
+				var res;
+				if(number.length <= 3){
+				res = number;
+				}else{
+					var start = number.length % 3;
+					if (start == 0){
+						for(var i=start; i<number.length; i+=3){
+							res = number.slice(0,3)+","+ number.slice(i, i+3);
+						}
+					}else{
+						res = number.slice(0, start);
+						for(var i=start; i<number.length; i+=3){
+							res = res + "," + number.slice(i, i+3);
+						}
+					}
+				
+				}
+				document.getElementById("output").value=res;
+			}
+			
+		</script>
+	</body>
+</html>

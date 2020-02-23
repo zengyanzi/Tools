@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" charset="utf-8"?>
+		<title>Dataformat</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+	</head>
+	<body>
+		<input type="text" id="origin"  placeholder="please input the number"  />
+		<br/>
+		<!-- <input type="text" id="count" pleaceholder="please input the number of decimals" /> -->
+		<br/>
+		<button type="button" onClick="myChange()">Click</button>
+		<br/>
+		<input type="text" id="output"/>
+		<script>
+			function myChange(){
+				const origindata= parseInt(document.getElementById("origin").value);
+				console.log("origindata"+origindata);
+				//const count =parseInt(document.getElementById("count").value);
+				//console.log("count"+count);
+				const outputdata = numeral(origindata).format('0,0.00')
+				document.getElementById("output").value=outputdata;
+			}
+			function num_format(number, decimals, dec_point, thousands_sep, roundtag){
+			/**
+ * 格式化数字
+ * @param  {[string | number]} number  [要格式化的数字]
+ * @param  {[number]} decimals         [保留几位小数]
+ * @param  {[string]} dec_point        [小数点符号]
+ * @param  {[string]} thousands_sep    [千分位符号]
+ * @param  {[string]} roundtag         [舍入参数，默认 "ceil" 向上取,"floor"向下取,"round" 四舍五入]
+ * @return {[string]} 格式化后的结果
+ */	
+				number =(number +'').replace(/[^0-9+-Ee.]/g,'');
+				roundtag =roundtag || 'ceil';//"ceil","floor","round"
+				var n =!isFinite(+number)?0 :number,
+					prec =!isFinite(+decimal)?0:Math.abs(decimal),
+					sep= (typeof thousands_sep ==='undefined')?',':thousands_sep,
+					dec =(typeof dec_point === 'undefined')?',':dec_point,
+					s= '',
+					toFixedFix = function(n,prec){
+						 var k =Math.pow(10,prec);
+						 console.log();
+						 return ''+parseFloat(Math[roundtag](parseFloat(n *k ).toFixed((prec*2))).toFixed(prec*2))/k;
+			
+					};
+					s=(prec? toFixedFix(n,prec):''+Math.round(n)).split('.');
+					var re =/(-?\d+)(\d{3})/;
+					while(re.test(s[0])){
+					s[0]=s[0].replace(re,"$1"+sep+"$2");
+					}
+					if((s[1]||'').length<prec){
+					 s[1]=s[1]||'';
+					 s[1]+= new Array(prec -s[1].length+1).join('0');
+					}
+					return s.join(dec);
+				}
+		</script>
+	</body>
+</html>
