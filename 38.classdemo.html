@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta  http-equiv="Contect-Type" charset="utf-8">
+		<title>classdemo</title>
+	</head>
+	<body>
+	</body>
+	<p>classdemo</p>
+	<script>
+		class Student{
+			constructor(name,number){
+				this.name =name
+				this.number =number
+			}
+			sayHi(){
+				console.log(
+				`name ${this.name},number ${this.number}`
+				)
+
+			}
+			
+		}
+		//通过类声明对象实例
+		const james = new Student('james',100);
+		console.log(james.name);
+		console.log(james.number);
+		james.sayHi();
+		
+		const tom = new Student('tom',101);
+		
+		console.log(tom.name);
+		console.log(tom.number);
+		tom.sayHi();
+		
+	</script>
+</html>

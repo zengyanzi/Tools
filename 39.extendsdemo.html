@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta  http-equiv="Contect-Type" charset="utf-8">
+		<title>extendsdemo</title>
+	</head>
+	<body>
+	</body>
+	<p>extendsdemo</p>
+	<script>
+		class People{
+			constructor(name){
+				this.name=name+'sir'
+			}
+			eat(){
+				console.log(`${this.name} eat some food`)
+			}
+		}
+		//子类
+		class Teacher extends People{
+				constructor(name,major){
+				super(name)
+				this.major=major
+			}
+			teach(){
+				console.log(`${this.name},teach ${this.major}`)
+			}
+		}
+		class Student extends People{
+			constructor(name,number){
+				super(name)
+				this.number=number
+			}
+			sayHi(){
+				console.log(`name ${this.name},number ${this.number}`)
+			}
+		}
+		const james = new Student('james',100);
+		console.log(james.name);
+		console.log(james.number);
+		james.sayHi();
+		james.eat();
+		const wang = new Teacher('wang','math');
+		console.log(wang.name);
+		console.log(wang.major);
+		wang.teach();
+		wang.eat();
+		
+		
+	</script>
+</html>
