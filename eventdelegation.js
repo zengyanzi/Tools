@@ -24,7 +24,7 @@ function bindEvent(elem,type,selector,fn){
 	
 }
 const div1 =document.getElementById('div1')
-/* bindEvent(div1,'click',e=>{
+/* bindEvent(div1,'click',function(e){
 	event.preventDefault()
 	const target = e.target
 	if(target.nodeName === 'A'){
@@ -32,7 +32,15 @@ const div1 =document.getElementById('div1')
 	}
 }) */
 
-bindEvent(div1,'click','a',e=>{
+//普通绑定
+const btn1 = document.getElementById('btn1')
+bindEvent(btn1,'click',function(e){
+	event.preventDefault()
+	alert(this.innerHTML)
+})
+//代理绑定
+
+bindEvent(div1,'click','a',function(e){
 	event.preventDefault()
 	alert(this.innerHTML)
 })
