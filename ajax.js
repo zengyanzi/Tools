@@ -14,8 +14,8 @@ xhr.onreadystatechange = function (){
 xhr.send(null)
 
 const xhr = new XMLHttpRequest()
-//false代表异步请求，因为是网络请求，不能卡顿
-xhr.open('POST','/login',false)
+//true代表异步请求，因为是网络请求，不能卡顿
+xhr.open('POST','/login',true)
 xhr.onreadystatechange = function (){
 	if(xhr.readyState ===4){
 		if(xhr.status ===200){
